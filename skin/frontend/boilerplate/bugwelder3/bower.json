@@ -1,0 +1,18 @@
+{
+  "name": "magento-bugwelder3-theme",
+  "version": "0.0.0",
+  "authors": [
+    "Pascal Garber <jumplink@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bugwelder-bootstrap3": "git@github.com:bugwelder/bugwelder-bootstrap3.git"
+  }
+}

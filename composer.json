@@ -1,0 +1,20 @@
+{
+    "name": "bugwelder/magento-bugwelder3-theme",
+    "type": "magento-module",
+    "description": "Bugwelder Bootstrap 3.0 Magento Template",
+    "authors": [
+        {
+            "name": "Pascal Garber",
+            "email": "jumplink@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/magento-hackathon/magento-composer-installer"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
