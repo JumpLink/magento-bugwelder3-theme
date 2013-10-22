@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           paths: ["assets/css"]
         },
         files: {
-          "css/style.css": "less/style.less"
+          "../../../skin/frontend/boilerplate/bugwelder3/css/style.css": "../../../skin/frontend/boilerplate/bugwelder3/less/style.less"
         }
       },
       production: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
           yuicompress: true
         },
         files: {
-          "css/style.css": "less/style.less"
+          "../../../skin/frontend/boilerplate/bugwelder3/css/style.css": "../../../skin/frontend/boilerplate/bugwelder3/less/style.less"
         }
       }
     }
