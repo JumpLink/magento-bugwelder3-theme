@@ -1,0 +1,16 @@
+{
+  "name": "magento-bugwelder3-theme",
+  "version": "0.0.0",
+  "description": "Bugwelder Bootstrap 3.0 Magento Template",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bugwelder/magento-bugwelder3-theme.git"
+  },
+  "author": "Pascal Garber",
+  "license": "proprietary",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.7.0"
+  }
+}
