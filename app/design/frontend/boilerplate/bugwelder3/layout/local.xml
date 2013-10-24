@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+
+	<!-- Default handle, loaded on most pages -->
+	<default>
+
+		<reference name="head">
+
+			<!-- Remove Magento's default assets -->
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/print.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles-ie.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/styles.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_css</type>
+				<name>css/widgets.css</name>
+			</action>
+			<action method="removeItem">
+				<type>skin_js</type>
+				<name>js/ie6.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>lib/ds-sleight.js</name>
+			</action>
+			<action method="removeItem">
+				<type>js</type>
+				<name>varien/menu.js</name>
+			</action>
+
+			<!-- Add our assets -->
+			<action method="addCss">
+				<stylesheet>css/style.css</stylesheet>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/scripts.js</name>
+			</action>
+
+		</reference>
+
+		<!-- move search from header to topnav -->
+		<reference name="header">
+			<action method="unsetChild">
+				<alias>topSearch</alias>
+			</action>
+			<reference name="top.menu">
+				<reference name="catalog.topnav">
+					<action method="insert">
+						<block>top.search</block>
+					</action>
+				</reference>
+			</reference>
+		</reference>
+
+	</default>
+
+	<print>
+
+		<reference name="head">
+
+			<!-- Add our assets -->
+			<action method="addCss">
+				<stylesheet>css/style.css</stylesheet>
+			</action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/scripts.js</name>
+			</action>
+
+		</reference>
+
+	</print>
+
+</layout>

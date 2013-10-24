@@ -1,0 +1,9 @@
+@import "../components/bugwelder-bootstrap3/less/inputs.less";
+
+
+// TODO not shure if this is an bootstrap or magento issue
+select:focus {
+  border-color: @input-focus-border !important;
+  outline: 0!important;
+  .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{input-focus-border}") !important;
+}
