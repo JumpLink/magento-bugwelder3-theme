@@ -48,19 +48,6 @@
 
 		</reference>
 
-		<!-- move search from header to topnav -->
-		<reference name="header">
-			<action method="unsetChild">
-				<alias>topSearch</alias>
-			</action>
-			<reference name="top.menu">
-				<reference name="catalog.topnav">
-					<action method="insert">
-						<block>top.search</block>
-					</action>
-				</reference>
-			</reference>
-		</reference>
 
 	</default>
 

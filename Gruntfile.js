@@ -1,7 +1,9 @@
-'use strict'; 
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    jshint: {
+      custom: ['Gruntfile.js', '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js']
+    },
     uglify: {
       development: {
         options: {
@@ -10,14 +12,16 @@ module.exports = function(grunt) {
         },
         files: {
           '../../../skin/frontend/boilerplate/bugwelder3/js/scripts.js': [
-            '../../../skin/frontend/boilerplate/default/js/script-ck.js'
+            '../../../skin/frontend/boilerplate/default/js/script-ck.js',
+            '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js'
           ]
         }
       },
       production: {
         files: {
           '../../../skin/frontend/boilerplate/bugwelder3/js/scripts.js': [
-            '../../../skin/frontend/boilerplate/default/js/script-ck.js'
+            '../../../skin/frontend/boilerplate/default/js/script-ck.js',
+            '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js'
           ]
         }
       }
@@ -42,22 +46,31 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      less: {
         files: ["../../../skin/frontend/boilerplate/bugwelder3/less/*", "../../../skin/frontend/boilerplate/bugwelder3/components/bugwelder-bootstrap3/less/*"],
         tasks: ["less:development"]
+      },
+      js: {
+        files: ["../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js"],
+        tasks: ["uglify:development", 'jshint:custom']
+      },
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.registerTask('default', [
+    'jshint:custom',
     'less:development',
     'uglify:development'
   ]);
 
   grunt.registerTask('production', [
+    'jshint:custom',
     'less:production',
     'uglify:production'
   ]);
-}
+};

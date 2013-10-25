@@ -51,12 +51,17 @@
             </div>
 
             <div class="collapse navbar-collapse navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <?php echo $_menu ?>
+                <div class="command-bar">
+                    <?php echo $this->getChildHtml('top.search') ?>
+                    <ul class="nav navbar-nav">
+                        <?php echo $_menu ?>
+                    </ul>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <?php echo $this->getChildHtml('topConfig') ?>
                 </ul>
             </div>
-
-            <?php echo $this->getChildHtml('top.search') ?>
         </nav>
     </div>
 <?php endif ?>

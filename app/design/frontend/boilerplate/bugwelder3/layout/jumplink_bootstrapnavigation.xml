@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <default>
+    <reference name="header">
+
+      <!-- move search from header to topnav -->
+      <action method="unsetChild">
+        <alias>topSearch</alias>
+      </action>
+      <reference name="top.menu">
+        <reference name="catalog.topnav">
+          <action method="insert">
+            <block>top.search</block>
+          </action>
+        </reference>
+      </reference>
+
+      <!-- insert configbutton block to topnav -->
+      <reference name="top.menu">
+        <reference name="catalog.topnav">
+          <block type="core/template" name="top.topnav.configbutton" as="topConfig" template="page/html/configbutton.phtml">
+          </block>
+        </reference>
+      </reference>
+
+      <!-- move store_language, topLinks to configbutton -->
+      <action method="unsetChild">
+        <alias>topLinks</alias>
+      </action>
+      <action method="unsetChild">
+        <alias>store_language</alias>
+      </action>
+      <reference name="top.menu">
+        <reference name="catalog.topnav">
+          <reference name="top.topnav.configbutton">
+            <action method="insert">
+              <block>top.links</block>
+            </action>
+            <action method="insert">
+              <block>store_language</block>
+            </action>
+          </reference>
+        </reference>
+      </reference>
+
+    </reference>
+  </default>
+</layout>

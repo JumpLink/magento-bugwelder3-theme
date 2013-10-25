@@ -2903,24 +2903,6 @@ p.required {
   margin-right: -12em;
   position: relative;
 }
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="week"],
-input[type="number"],
-input[type="email"],
-input[type="url"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-.uneditable-input {
-  border-color: #bcbcbc;
-}
 /*  */
 .form-search .input-append .btn {
   height: 26px;
@@ -2979,6 +2961,28 @@ input[type="color"]:focus,
 
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(246, 163, 21, 0.8);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(246, 163, 21, 0.8);
+}
+.command-bar {
+  width: 900px;
+}
+.command-bar .command-bar-form {
+  position: relative;
+  z-index: 95;
+  width: 220px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.command-bar .navbar-nav {
+  position: absolute;
+  padding-left: 230px;
+  -webkit-transition: opacity 0.4s linear;
+  transition: opacity 0.4s linear;
+}
+.command-bar.focus .command-bar-form {
+  width: 400px;
+}
+.command-bar.focus .navbar-nav {
+  opacity: 0;
 }
 select:focus {
   border-color: rgba(246, 163, 21, 0.8) !important;
@@ -3352,8 +3356,6 @@ input[type="button"].btn-block {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb79e7b', endColorstr='#ffa5865a', GradientType=0);
   border-color: #a5865a #a5865a #745e3f;
-  /*border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);*/
-
   *background-color: #a5865a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -3526,8 +3528,6 @@ fieldset[disabled] .button.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb79e7b', endColorstr='#ffa5865a', GradientType=0);
   border-color: #a5865a #a5865a #745e3f;
-  /*border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);*/
-
   *background-color: #a5865a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -3598,8 +3598,6 @@ fieldset[disabled] .button.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb79e7b', endColorstr='#ffa5865a', GradientType=0);
   border-color: #a5865a #a5865a #745e3f;
-  /*border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);*/
-
   *background-color: #a5865a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -3709,8 +3707,6 @@ fieldset[disabled] .button.active {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb79e7b', endColorstr='#ffa5865a', GradientType=0);
   border-color: #a5865a #a5865a #745e3f;
-  /*border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);*/
-
   *background-color: #a5865a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
@@ -5505,6 +5501,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-form .search {
   width: 190px;
 }
+.dropdown-parent:hover .dropdown-menu {
+  display: block;
+}
 .navbar-brand .bw-logo {
   margin-top: -25px;
   margin-bottom: -25px;
@@ -6690,6 +6689,9 @@ a.form-search .search-autocomplete li:focus {
     float: left;
     width: 50%;
   }
+}
+.form-search {
+  margin-bottom: 0;
 }
 .block {
   margin-bottom: 20px;
@@ -10425,8 +10427,6 @@ textarea.my-wishlist textarea {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb79e7b', endColorstr='#ffa5865a', GradientType=0);
   border-color: #a5865a #a5865a #745e3f;
-  /*border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) fadein(rgba(0,0,0,.1), 15%);*/
-
   *background-color: #a5865a;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
