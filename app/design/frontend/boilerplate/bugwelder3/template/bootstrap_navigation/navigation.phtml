@@ -31,15 +31,37 @@
  * @see Mage_Page_Block_Html_Topmenu
  */
 ?>
-<?php $_menu = $this->getHtml('level-top') ?>
+<?php
+    $_menu = $this->getHtml('level-top');
+    $navbarType = $this->getNavbarType();
+    $navbarClasses = "navbar-default";
+    switch($navbarType) {
+        case ("default"):
+        echo "default";
+        break;
+
+        case ("fixed_top"):
+        $navbarClasses .= " navbar-fixed-top";
+        break;
+
+        case ("fixed_bottom"):
+        $navbarClasses .= " navbar-fixed-bottom";
+        break;
+
+        case ("static_top"):
+        $navbarClasses .= " navbar-static-top";
+        break;
+    }
+?>
+
 <?php if ($_menu): ?>
     <div class="container">
-        <nav class="navbar navbar-default navbar-main" role="navigation">
+        <nav class="navbar <?php echo $navbarClasses ?>" role="navigation">
 
             <div class="navbar-header">
 
                 <a class="navbar-brand" href="#">
-                    <?php echo $this->__('Categories') ?>
+                    <div class="<?php echo $this->getNavbarBrandClass(); ?>"></div>
                 </a>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -59,7 +81,7 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <?php echo $this->getChildHtml('topConfig') ?>
+                    <?php echo $this->getChildHtml('topAccount') ?>
                 </ul>
             </div>
         </nav>

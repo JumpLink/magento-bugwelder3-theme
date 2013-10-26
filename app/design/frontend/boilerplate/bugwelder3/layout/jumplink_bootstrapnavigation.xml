@@ -3,6 +3,23 @@
   <default>
     <reference name="header">
 
+      <!-- set costom template for search-->
+      <reference name="top.search">
+        <action method="setTemplate"><name>bootstrap_navigation/search.phtml</name></action>
+      </reference>  
+
+      <!-- set costom template for topnav-->
+      <reference name="top.menu">
+        <reference name="catalog.topnav">
+          <action method="setTemplate"><name>bootstrap_navigation/navigation.phtml</name></action>
+        </reference>  
+      </reference>
+
+      <!-- set costom template for top.links-->
+      <reference name="top.links">
+        <action method="setTemplate"><name>bootstrap_navigation/links.phtml</name></action>
+      </reference>
+
       <!-- move search from header to topnav -->
       <action method="unsetChild">
         <alias>topSearch</alias>
@@ -15,15 +32,24 @@
         </reference>
       </reference>
 
-      <!-- insert configbutton block to topnav -->
+      <!-- insert new account block to topnav -->
       <reference name="top.menu">
         <reference name="catalog.topnav">
-          <block type="core/template" name="top.topnav.configbutton" as="topConfig" template="page/html/configbutton.phtml">
+          <block type="core/template" name="top.topnav.account" as="topAccount" template="bootstrap_navigation/account.phtml">
           </block>
         </reference>
       </reference>
 
-      <!-- move store_language, topLinks to configbutton -->
+      <!-- set custom data for topnav -->
+      <!-- navbar_types: default, fixed_top, fixed_bottom, static_top -->
+      <reference name="top.menu">
+        <reference name="catalog.topnav">
+          <action method="setData"><name>navbar_type</name><value>fixed_top</value></action>
+          <action method="setData"><name>navbar_brand_class</name><value>bw-logo</value></action>
+        </reference>
+      </reference>
+
+      <!-- move store_language and topLinks to account -->
       <action method="unsetChild">
         <alias>topLinks</alias>
       </action>
@@ -32,7 +58,7 @@
       </action>
       <reference name="top.menu">
         <reference name="catalog.topnav">
-          <reference name="top.topnav.configbutton">
+          <reference name="top.topnav.account">
             <action method="insert">
               <block>top.links</block>
             </action>
