@@ -1,0 +1,136 @@
+
+
+/* css hover version of .dropdown */
+.dropdown-hover {
+    &:hover {
+        > .dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+/* new dropdown-submenu (css hover version) */
+.dropdown-submenu-hover {
+    position:relative;
+    > .dropdown-menu
+    {
+        top:0;
+        left:100%;
+        margin-top:-6px;
+        margin-left:-1px;
+        -webkit-border-radius:0 6px 6px 6px;
+        -moz-border-radius:0 6px 6px 6px;
+        border-radius:0 6px 6px 6px;
+    }
+     
+    > a:after {
+        display:block;
+        content:" ";
+        float: right;
+        width:0;
+        height:0;
+        border-color:transparent;
+        border-style:solid;
+        border-width:5px 0 5px 5px;
+        border-left-color: @dropdown-caret-color;
+        margin-top:5px;
+        margin-right:-10px;
+    }
+     
+    &:hover {
+        background-color: @dropdown-link-hover-bg;
+        
+        > .dropdown-menu {
+            display:block;
+        }
+        > a {
+            color: @dropdown-link-hover-color;
+            &:after {
+                border-left-color: @dropdown-caret-hover-color;
+            }
+        }
+
+    }
+
+    &.pull-right {
+      right: 0;
+      left: auto;
+    }
+     
+    .pull-left {
+        float:none;
+        > .dropdown-menu {
+            left:-100%;
+            margin-left:10px;
+            -webkit-border-radius:6px 0 6px 6px;
+            -moz-border-radius:6px 0 6px 6px;
+            border-radius:6px 0 6px 6px;
+        }
+    }
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with it's own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+.navbar-nav {
+  @media (max-width: @screen-xs-max) {
+    .level1, .level2, .level3, .level4, .level5 {
+      padding-left: 15px;
+    }
+    .dropdown-submenu-hover > a:after {
+      border: none; // hide right caret
+    }
+    // Dropdowns get custom display when collapsed
+    .dropdown-hover:hover .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      //background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      > li > a,
+      .dropdown-header {
+        padding: 5px 15px 5px 25px;
+      }
+      > li > a {
+        line-height: @line-height-computed;
+        &:hover,
+        &:focus {
+          background-image: none;
+        }
+      }
+    }
+  }
+  // Uncollapse the nav
+  @media (min-width: @grid-float-breakpoint) {
+    .dropdown-submenu-hover > a .caret {
+      display: none; // hide bottom caret
+    }
+  }
+}
+
+.navbar {
+  //width: 900px;
+  .form-search {
+    //position: relative;
+    z-index:95;
+    width:220px;
+    .transition(width 0.4s ease-in-out);
+  }
+  .navbar-nav {
+    //position: absolute;
+    //padding-left: 230px;
+    .transition(opacity 0.4s linear);
+  }
+  &.search-focus {
+    .form-search {
+      width: 400px;
+    }
+    .navbar-nav {
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}

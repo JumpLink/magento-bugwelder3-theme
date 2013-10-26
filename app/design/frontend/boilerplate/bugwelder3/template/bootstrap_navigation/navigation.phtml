@@ -73,12 +73,10 @@
             </div>
 
             <div class="collapse navbar-collapse navbar-main-collapse">
-                <div class="command-bar">
-                    <?php echo $this->getChildHtml('top.search') ?>
-                    <ul class="nav navbar-nav">
-                        <?php echo $_menu ?>
-                    </ul>
-                </div>
+                <?php echo $this->getChildHtml('top.search') ?>
+                <ul class="nav navbar-nav">
+                    <?php echo $_menu ?>
+                </ul>
 
                 <ul class="nav navbar-nav navbar-right">
                     <?php echo $this->getChildHtml('topAccount') ?>

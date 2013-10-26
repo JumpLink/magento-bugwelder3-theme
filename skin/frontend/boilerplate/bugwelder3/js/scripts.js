@@ -4403,10 +4403,10 @@ jQuery.noConflict(), function(a) {
         a.start();
     });
 }(jQuery), jQuery(document).ready(function() {
-    jQuery('.command-bar .command-bar-form input[type="text"]').focus(function() {
+    jQuery('.navbar .form-search input[type="text"]').focus(function() {
         console.log("focus"), //jQuery(this).addClass("focus");
-        jQuery(this).closest(".command-bar").addClass("focus");
+        jQuery(this).closest(".navbar").addClass("search-focus");
     }).blur(function() {
-        console.log("blur"), jQuery(this).closest(".command-bar").removeClass("focus");
+        console.log("blur"), jQuery(this).closest(".navbar").removeClass("search-focus");
     });
 });

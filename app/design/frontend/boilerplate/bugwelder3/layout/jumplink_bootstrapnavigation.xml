@@ -20,6 +20,11 @@
         <action method="setTemplate"><name>bootstrap_navigation/links.phtml</name></action>
       </reference>
 
+      <!-- set costom template for store_language-->
+      <reference name="store_language">
+        <action method="setTemplate"><name>bootstrap_navigation/languages.phtml</name></action>
+      </reference>
+
       <!-- move search from header to topnav -->
       <action method="unsetChild">
         <alias>topSearch</alias>

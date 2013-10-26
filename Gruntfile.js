@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      custom: ['Gruntfile.js', '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js']
+      custom: ['Gruntfile.js', '../../../skin/frontend/boilerplate/bugwelder3/js/bootstrap_navigation.js']
     },
     uglify: {
       development: {
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         files: {
           '../../../skin/frontend/boilerplate/bugwelder3/js/scripts.js': [
             '../../../skin/frontend/boilerplate/default/js/script-ck.js',
-            '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js'
+            '../../../skin/frontend/boilerplate/bugwelder3/js/bootstrap_navigation.js'
           ]
         }
       },
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         files: {
           '../../../skin/frontend/boilerplate/bugwelder3/js/scripts.js': [
             '../../../skin/frontend/boilerplate/default/js/script-ck.js',
-            '../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js'
+            '../../../skin/frontend/boilerplate/bugwelder3/js/bootstrap_navigation.js'
           ]
         }
       }
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         tasks: ["less:development"]
       },
       js: {
-        files: ["../../../skin/frontend/boilerplate/bugwelder3/js/command-bar.js"],
+        files: ["../../../skin/frontend/boilerplate/bugwelder3/js/bootstrap_navigation.js"],
         tasks: ["uglify:development", 'jshint:custom']
       },
     }
