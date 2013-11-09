@@ -5533,7 +5533,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 .navbar .form-search {
   z-index: 95;
-  width: 220px;
+  width: 245px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
@@ -5542,10 +5542,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
   transition: opacity 0.4s linear;
 }
 .navbar.search-focus .form-search {
-  width: 400px;
+  width: 500px;
 }
 .navbar.search-focus .navbar-nav {
-  position: absolute;
   opacity: 0;
 }
 .breadcrumb {
